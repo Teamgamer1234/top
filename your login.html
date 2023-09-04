@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firebase Authentication and Firestore Example</title>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <style>
+           body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        // Replace with your Firebase configuration
+        const firebaseConfig = {
+    apiKey: "AIzaSyDY2tOg5ENnbjkkOImgdW8TtgBBwHJ81zo",
+    authDomain: "login-for-urduanimes.firebaseapp.com",
+    projectId: "login-for-urduanimes",
+    storageBucket: "login-for-urduanimes.appspot.com",
+    messagingSenderId: "263964154080",
+    appId: "1:263964154080:web:7bd2cf37bd72a5ee55d885",
+    measurementId: "G-9FLSV94Y4K"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // Rest of the JavaScript code (signUp, login, etc.)
+    </script>
+</head>
+<body>
+    <h1>login to continue or sign up</h1>
+    
+    <h2>Sign Up</h2>
+    <input type="email" id="signupEmail" placeholder="Email">
+    <input type="password" id="signupPassword" placeholder="Password">
+    <button onclick="signUp()">Sign Up</button>
+    
+    <h2>Login</h2>
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPassword" placeholder="Password">
+    <button onclick="login()">Login</button>
+    
+    <h2>Password Reset</h2>
+    <button onclick="resetPassword()">Reset Password</button>
+    
+    <button onclick="storeDataInFirestore()">Store Data in Firestore</button>
+    
+    <!-- Redirect button to urduanimes.blogspot.com -->
+    <button onclick="redirectToUrduAnimes()">Redirect to Urdu Animes</button>
+    
+    <script>
+        function redirectToUrduAnimes() {
+            var redirectUrl = "https://urduanimes.blogspot.com";
+            window.location.href = redirectUrl;
+        }
+    </script>
+</body>
+</html>
